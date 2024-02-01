@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tienda</title>
+        <!--Lo sincroniza con css-->
+		<link rel="stylesheet" href="trabajo.css" />
+	</head>
+    
+	<body>
+		<header>
+			<h1>Tienda Alvaro</h1>
+			<div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<span class="cantidad-producto-carrito">1</span>
+								<p class="titulo-producto-carrito">Zapatos Nike</p>
+								<span class="precio-producto-carrito">$80</span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar">$200</span>
+					</div>
+					<p class="cart-empty">El carrito está vacío</p>
+				</div>
+			</div>
+		</header>
+		<div class="container-items">
+			<div class="item">
+				<figure>
+                    <!--link de la imagen-->
+					<img
+						src="https://acdn.mitiendanube.com/stores/001/511/342/products/muestra-de-ropa-21-2f4746320af5cb81df16880017996063-640-0.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+                <!--Nombre producto-->
+					<h2>Buzo Marron</h2>
+					<p class="price">$80</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://acdn.mitiendanube.com/stores/001/827/326/products/buzo-20-negro-frente1-b8e07a68b2d688d73b16593659965527-640-0.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Buzo Negro</h2>
+					<p class="price">$20</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://acdn.mitiendanube.com/stores/001/047/785/products/buzo-over-blanco-tigre-021-73e86fca1d11f5995d16861541181566-1024-1024.png"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Buzo Blanco</h2>
+					<p class="price">$50</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://http2.mlstatic.com/nuevas-zapatillas-puma-rs-x-running-hombre-D_NQ_NP_972354-MCO29505484516_022019-F.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Zapatilla Puma</h2>
+					<p class="price">$90</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://falabella.scene7.com/is/image/Falabella/14819578_01?wid=800&hei=800&qlt=70"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Zapatilla Adidas</h2>
+					<p class="price">$20</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+				<div class="item">
+		<figure>
+			<img
+			src="https://http2.mlstatic.com/D_NQ_NP_822800-MLA47644585474_092021-O.webp"
+			alt="producto"
+		/>
+			</figure>
+			<div class="info-product">
+				<h2>Zapatilla Rayo Mc Queen</h2>
+				<p class="price">$20</p>
+				<button class="btn-add-cart">Añadir al carrito</button>
+			</div>
+			<div class="item">
+                <!--Detalles del producto-->
+					<div class="container-details-product">
+						<div class="form-group">
+							<label for="colour">Color</label>
+							<select name="colour" id="colour">
+								<option disabled selected value="">
+                                    <!--Opciones de color-->
+									Escoge una opción
+								</option>
+								<option value="rojo">Rojo</option>
+								<option value="blanco">Blanco</option>
+								<option value="beige">Beige</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="size">Talla</label>
+							<select name="size" id="size">
+								<option disabled selected value="">
+                                    <!--Talles del producto-->
+									Escoge una opción
+								</option>
+								<option value="40">40</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+							</select>
+						</div>
+						<button class="btn-clean">Limpiar</button>
+					</div>
+							<div class="btn-increment-decrement">
+								<i class="fa-solid fa-chevron-up" id="increment"></i>
+								<i class="fa-solid fa-chevron-down" id="decrement"></i>
+					</div>
+	
+					<div class="container-description">
+						<div class="title-description">
+							<h4>Descripción</h4>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+                        <!--Descripcion del producto-->
+						<div class="text-description">
+							<p>
+								Descripción:
+								El diseño de estas zapatillas es moderno y urbano, con líneas elegantes y detalles sutiles que las hacen versátiles para combinar con diferentes estilos de vestimenta. Incorporan un sistema de cierre ajustable, como cordones o velcro, que garantiza un ajuste seguro y personalizado.
+							</p>
+						</div>
+					</div>
+	
+					<div class="container-additional-information">
+						<div class="title-additional-information">
+							<h4>Información adicional</h4>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div class="text-additional-information hidden">
+							<p>-----------</p>
+						</div>
+					</div>
+	
+					<div class="container-reviews">
+						<div class="title-reviews">
+							<h4>Reseñas</h4>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div class="text-reviews hidden">
+							<p>-----------</p>
+						</div>
+					</div>
+	              <!--Redes-->
+					<div class="container-social">
+						<span>Compartir</span>
+						<div class="container-buttons-social">
+							<a href="#"><i class="fa-solid fa-envelope"></i></a>
+							<a href="#"><i class="fa-brands fa-facebook"></i></a>
+							<a href="#"><i class="fa-brands fa-twitter"></i></a>
+							<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+						</div>
+				</div>
+			</main>
+	
+			<script
+				src="https://kit.fontawesome.com/81581fb069.js"
+				crossorigin="anonymous"
+			></script>
+            <!--lo sincroniza con javascript-->
+			<script src="trabajo.js"></script>
+		</body>
+</html>

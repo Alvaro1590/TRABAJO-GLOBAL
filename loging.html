@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Tienda</title>
+        <!--Lo sincroniza con css-->
+		<link rel="stylesheet" href="trabajo.css" />
+	</head>
+    <body>
+
+        <main>
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión</p>
+                        <button id="btn__registrarse">Regístrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form
+					action="http://localhost:9000/autenticar"
+					method="post"
+					class="formulario__login"
+					id="loginForm"
+					>
+					<h2>Iniciar Sesión</h2>
+					<input type="text" placeholder="Correo Electronico" name="email">
+					<input type="password" placeholder="Contraseña" name="password">
+					<button type="button" onclick="verificar()">Entrar</button>
+					</form>
+                  <!--Register-->  
+                    <form action="" class="formulario__register">
+                        <h2>Regístrarse</h2>
+                        <input type="text" placeholder="Nombre completo">
+                        <input type="text" placeholder="Correo Electronico">
+                        <input type="text" placeholder="Usuario">
+                        <input type="password" placeholder="Contraseña">
+                        <button>Regístrarse</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+        <script src="assets/js/script.js"></script>
+		<script>
+			function verificar() {
+			  const email = document.querySelector('input[name="email"]').value;
+			  const password = document.querySelector('input[name="password"]').value;
+		  
+			  // Realiza la solicitud al servidor
+			  fetch('http://localhost:9000/autenticar', {
+				method: 'POST',
+				headers: {
+				  'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ email, password }),
+			  })
+				.then(response => response.json())
+				.then(data => {
+                    if (data.token) {
+                        // Si hay un token en la respuesta, redirige a la página de dashboard
+                        window.location.href = 'trabajo.html'
+                        alert(`Bienvenido ${data.firstName} ${data.lastName}`);
+                        // Si no hay token, muestra una alerta de error
+                    }
+				})
+				.catch(error => {
+                    alert('Error de autenticación. Verifica tu correo electrónico y contraseña.');
+				    console.error('Error al autenticar:', error);
+				});
+			}
+		  </script>
+</body>
+</html>
